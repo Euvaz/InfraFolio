@@ -27,8 +27,8 @@ WORKDIR /
 COPY scripts/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY scripts/*.py ./
-COPY website/* ./
+COPY scripts/*.py ./scripts
+COPY website/ ./website
 
 ENV PORT 8080
 ENV GIN_MODE release
