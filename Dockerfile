@@ -29,6 +29,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY scripts/*.py ./
 
+ENV PORT 8080
+ENV GIN_MODE release
 EXPOSE 8080
 
 COPY --from=build-stage /InfraFolio /InfraFolio
