@@ -15,8 +15,13 @@ COPY --from=build-stage /app /app
 RUN go test -v ./...
 
 # Deploy to lean image
-FROM alpine AS build-release-stage
+FROM python:3.11.3-alpine AS build-release-stage
 WORKDIR /
+COPY scripts/requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+COPY scripts/*.py ./
+RUN ls -l
 COPY --from=build-stage /InfraFolio /InfraFolio
 EXPOSE 8080
-ENTRYPOINT ["/InfraFolio"]
+ENTRYPOINT [ "/InfraFolio" ]
+
