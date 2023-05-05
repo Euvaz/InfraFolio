@@ -25,7 +25,7 @@ func initDB(db *sql.DB) {
 	var err error
 
 	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS github (
-                        id SERIAL PRIMARY KEY,
+                        id SERIAL,
                         name TEXT,
                         contributions INTEGER
                     );`)
@@ -34,7 +34,7 @@ func initDB(db *sql.DB) {
 	}
 
 	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS github_repositories (
-                        id SERIAL PRIMARY KEY,
+                        id SERIAL,
                         owner TEXT,
                         name TEXT
                     );`)
@@ -43,7 +43,7 @@ func initDB(db *sql.DB) {
 	}
 
 	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS github_stars (
-                        id SERIAL PRIMARY KEY,
+                        id SERIAL,
                         name TEXT,
                         github_repositories_id SERIAL
                         REFERENCES github_repositories (id)
