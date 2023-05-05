@@ -26,8 +26,8 @@ func initDB(db *sql.DB) {
 
 	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS github (
                         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-                        name TEXT,
-                        contributions INTEGER
+                        name TEXT NOT NULL,
+                        contributions INTEGER NOT NULL
                     );`)
 	if err != nil {
 		logger.Fatal(err.Error())
@@ -36,7 +36,8 @@ func initDB(db *sql.DB) {
 	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS github_repositories (
                         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                         owner TEXT,
-                        name TEXT
+                        name TEXT NOT NULL,
+                        UNIQUE (owner, name)
                     );`)
 	if err != nil {
 		logger.Fatal(err.Error())
@@ -44,7 +45,7 @@ func initDB(db *sql.DB) {
 
 	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS github_stars (
                         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-                        name TEXT,
+                        name TEXT NOT NULL,
                         github_repositories_id SERIAL
                         REFERENCES github_repositories (id)
                     );`)
