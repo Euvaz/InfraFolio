@@ -16,7 +16,7 @@ func main() {
     defer closeDB(db)
 
     router := gin.Default()
-    registerRoutes(router, db)
+    registerRoutes(router)
 
     router.Run()
 }
