@@ -27,7 +27,7 @@ func initDB(db *sql.DB) {
 	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS github (
                         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                         name TEXT NOT NULL,
-                        contributions INTEGER NOT NULL
+                        contributions INTEGER
                     );`)
 	if err != nil {
 		logger.Fatal(err.Error())

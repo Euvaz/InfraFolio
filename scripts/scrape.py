@@ -12,6 +12,16 @@ http = httplib2.Http()
 GITHUB_USER = "https://api.github.com/users/Euvaz"
 GITHUB_REPO_URL = GITHUB_USER + "/repos"
 
+# Get user information
+gh_user_payload = http.request(GITHUB_USER, method="GET")[1]
+gh_user_content = json.loads(gh_user_payload.decode())
+
+cursor.execute("""INSERT INTO github (name)
+               VALUES (?)""", (gh_user_content["login"],))
+
+# Commit changes
+connection.commit()
+
 # Get repository information
 gh_repo_payload = http.request(GITHUB_REPO_URL, method="GET")[1]
 gh_repo_content = json.loads(gh_repo_payload.decode())
@@ -22,13 +32,26 @@ for repo in gh_repo_content:
     gh_repo_owners.append(repo["owner"]["login"])
     gh_repo_names.append(repo["name"])
 
-gh_repo_complete = list(map(lambda x, y:(x,y), gh_repo_owners, gh_repo_names))
-for repo in gh_repo_complete:
-    cursor.execute(f"""INSERT INTO github_repositories (owner, name)
-                   VALUES ("{repo[0]}", "{repo[1]}")""")
+# Get fresh list of repositories
+gh_repo_fresh = list(map(lambda x, y:(x,y), gh_repo_owners, gh_repo_names))
+
+# Get current list of repositories
+cursor.execute("SELECT owner, name FROM github_repositories")
+gh_repo_current = set(cursor.fetchall())
+
+# Get and delete differing entries
+gh_repo_diff = gh_repo_current - set(gh_repo_fresh)
+cursor.executemany("DELETE FROM github_repositories where owner=? AND name=?", (gh_repo_diff))
+
+# Insert new entries
+cursor.executemany("""INSERT OR IGNORE INTO github_repositories (owner, name)
+                   VALUES (?, ?)""", [(repo[0], repo[1]) for repo in gh_repo_fresh])
 
 # Commit changes
 connection.commit()
+
+# Get repository star information
+#gh_repo_star_payload = http.request(GITHUB_REPO_URL)
 
 # Close Connection
 connection.close()
