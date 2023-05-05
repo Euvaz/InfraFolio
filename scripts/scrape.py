@@ -1,7 +1,7 @@
 import sqlite3
 
 # Initilize Connection and Cursor
-connection = sqlite3.connect("../locked.sqlite")
+connection = sqlite3.connect("locked.sqlite")
 cursor = connection.cursor()
 
 # Read from github table
