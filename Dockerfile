@@ -27,7 +27,7 @@ WORKDIR /
 COPY scripts/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY scripts/*.py ./scripts
+COPY scripts/*.py ./scripts/
 COPY website/ ./website
 
 ENV PORT 8080
