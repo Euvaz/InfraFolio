@@ -8,10 +8,12 @@ import (
 )
 
 func registerRoutes (router *gin.Engine) {
-    router.LoadHTMLGlob("website/static/*.html")
+    router.LoadHTMLGlob("website/tmpl/*.tmpl")
     router.GET("/", func(ctx *gin.Context) {
         logger.Info("Handling GET /")
-        ctx.HTML(http.StatusOK, "index.html", nil)
+        ctx.HTML(http.StatusOK, "index.tmpl", gin.H{
+            "title": "Initial Page",
+        })
     })
 }
 
