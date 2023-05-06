@@ -22,38 +22,38 @@ func main() {
 }
 
 func initDB(db *sql.DB) {
-	var err error
+    var err error
 
-	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS github (
+    _, err = db.Exec(`CREATE TABLE IF NOT EXISTS github (
                         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                         name TEXT NOT NULL,
                         contributions INTEGER
                     );`)
-	if err != nil {
-		logger.Fatal(err.Error())
-	}
+    if err != nil {
+        logger.Fatal(err.Error())
+    }
 
-	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS github_repositories (
+    _, err = db.Exec(`CREATE TABLE IF NOT EXISTS github_repositories (
                         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                         owner TEXT,
                         name TEXT NOT NULL,
                         UNIQUE (owner, name)
                     );`)
-	if err != nil {
-		logger.Fatal(err.Error())
-	}
+    if err != nil {
+        logger.Fatal(err.Error())
+    }
 
-	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS github_stars (
+    _, err = db.Exec(`CREATE TABLE IF NOT EXISTS github_stars (
                         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                         name TEXT NOT NULL,
                         github_repositories_id SERIAL
                         REFERENCES github_repositories (id)
                     );`)
-	if err != nil {
-		logger.Fatal(err.Error())
-	}
+    if err != nil {
+        logger.Fatal(err.Error())
+    }
 
-	logger.Info("Tables successfully initialized")
+    logger.Info("Tables successfully initialized")
 }
 
 func getDB () *sql.DB {
@@ -66,10 +66,10 @@ func getDB () *sql.DB {
 }
 
 func closeDB(db *sql.DB) {
-	err := db.Close()
-	if err != nil {
-		logger.Fatal(err.Error())
-	}
-	logger.Info("Database connection closed")
+    err := db.Close()
+    if err != nil {
+        logger.Fatal(err.Error())
+    }
+    logger.Info("Database connection closed")
 }
 
