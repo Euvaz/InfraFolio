@@ -16,6 +16,9 @@ func main() {
     defer closeDB(db)
 
     router := gin.Default()
+
+    router.Static("/static", "./website/static")
+
     registerRoutes(router)
 
     router.Run()

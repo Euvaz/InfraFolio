@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  background-color: #080808;
+  color: #E5E5E5;
+}
+
+header {
+  background-color: #161616;
+  color: #E5E5E5;
+  padding: 20px;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.header-nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+nav a {
+  color: #E5E5E5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #00E5FF;
+}
+
+#hero {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #00E5FF;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+#hero p {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+#about {
+  padding: 50px;
+}
+
+#about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 1.1rem;
+}
+
+#github {
+  padding: 50px;
+  background-color: #161616;
+}
+
+#github h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.repository-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.repository-list li {
+  width: calc(33.33% - 20px);
+  margin-bottom: 40px;
+}
+
+.repository-list li:hover h3 {
+  color: #00E5FF;
+}
+
+.repository-list li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.repository-list li a:hover {
+    background-color: #080808;
+}
+
+.repository-list li img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.repository-list li h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #E5E5E5;
+}
+
+#contact {
+  padding: 50px;
+  background-color: #080808;
+  border-top: 0.25rem solid;
+  color: #E5E5E5;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  background-color: #333;
+  color: #eee;
+}
+
+form textarea {
+  height: 150px;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: #00E5FF;
+  border-width: 0.1rem;
+}
+
+form button[type="submit"] {
+  background-color: #e5e5e5;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #444;
+}
+
+footer {
+  background-color: #161616;
+}
+
