@@ -1,6 +1,109 @@
-<html>
-    <h1>
-        {{ .title }}
-    </h1>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Engineer Portfolio</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul class="header-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#github">GitHub</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contributions">Contributions</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero">
+        <h1>Virgil Lopez</h1>
+        <p>Aspiring DevOps Engineer.</p>
+      </section>
+
+      <section id="github">
+        <h2>Main Projects</h2>
+        <ul class="repository-list">
+          <li>
+            <a href="https://github.com/Euvaz/GitOps-Home">
+              <img src="https://opengraph.githubassets.com/e1c6dd074f59c19e717cea95609dbffd49eab3782d9fcccda0c1be697f931934/Euvaz/GitOps-Home" alt="GitOps-Home" />
+              <h3>GitOps-Home</h3>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/Euvaz/InfraFolio">
+              <img src="https://opengraph.githubassets.com/c7e611f10dc817825efdbbd0a261fa8562f0ccb4c986fc40d634afb8d9e564ff/Euvaz/InfraFolio" alt="InfraFolio" />
+              <h3>InfraFolio</h3>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/Euvaz/TeXCV">
+              <img src="https://opengraph.githubassets.com/931ceba3119be4710fba4e44009d2eaac4314364c21605cbd19c77e752565983/Euvaz/TeXCV" alt="TeXCV" />
+              <h3>TeXCV</h3>
+            </a>
+          </li>
+        </ul>
+        <h2>Most Popular</h2>
+        <ul class="repository-list">
+          <li>
+            <a href="#">
+              <img src="https://via.placeholder.com/100" alt="GitHub #1 Most Starred" />
+              <h3>GitHub #1 Most Starred</h3>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="https://via.placeholder.com/100" alt="GitHub #2 Most Starred" />
+              <h3>GitHub #2 Most Starred</h3>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="https://via.placeholder.com/100" alt="GitHub #3 Most Starred" />
+              <h3>GitHub #3 Most Starred</h3>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="experience">
+      </section>
+
+      <section id="skills">
+      </section>
+
+      <section id="certifications">
+      </section>
+
+      <section id="contributions">
+      </section>
+
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <form class="form", action="#">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message"></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; Virgil Lopez 2023</p>
+    </footer>
+  </body>
+
 </html>
 
