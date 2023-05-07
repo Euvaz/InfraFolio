@@ -12,7 +12,7 @@ func registerRoutes (router *gin.Engine) {
     router.GET("/", func(ctx *gin.Context) {
         logger.Info("Handling GET /")
         ctx.HTML(http.StatusOK, "index.tmpl", gin.H{
-            "title": "Initial Page",
+            "title": "Virgil Lopez",
         })
     })
 }
