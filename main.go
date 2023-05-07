@@ -41,6 +41,7 @@ func initDB(db *sql.DB) {
                         owner TEXT,
                         name TEXT NOT NULL,
                         preview TEXT NOT NULL,
+                        stargazers_count INT NOT NULL,
                         UNIQUE (owner, name)
                     );`)
     if err != nil {
