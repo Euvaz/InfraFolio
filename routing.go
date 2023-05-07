@@ -13,6 +13,9 @@ func registerRoutes (router *gin.Engine) {
         logger.Info("Handling GET /")
         ctx.HTML(http.StatusOK, "index.tmpl", gin.H{
             "title": "Virgil Lopez",
+            "firstname": "Virgil",
+            "lastname": "Lopez",
+            "tagline": "Aspiring DevOps Engineer.",
         })
     })
 }

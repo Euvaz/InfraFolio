@@ -1,4 +1,4 @@
-{{ template "header.tmpl" }}
+{{ template "header.tmpl" . }}
     <main>
       <section id="hero">
         <h1>{{ .firstname }} {{ .lastname }}</h1>
@@ -76,5 +76,4 @@
       </section>
     </main>
 
-{{ template "footer.tmpl" }}
-
+{{ template "footer.tmpl" . }}
