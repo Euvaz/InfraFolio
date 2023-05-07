@@ -19,7 +19,7 @@ func main() {
 
     router.Static("/static", "./website/static")
 
-    registerRoutes(router)
+    registerRoutes(router, db)
 
     router.Run()
 }

@@ -1,13 +1,14 @@
 package main
 
 import (
-    "net/http"
+	"database/sql"
+	"net/http"
 
-    "github.com/Euvaz/go-log"
-    "github.com/gin-gonic/gin"
+	"github.com/Euvaz/go-log"
+	"github.com/gin-gonic/gin"
 )
 
-func registerRoutes (router *gin.Engine) {
+func registerRoutes (router *gin.Engine, db *sql.DB) {
     router.LoadHTMLGlob("website/tmpl/*.tmpl")
     router.GET("/", func(ctx *gin.Context) {
         logger.Info("Handling GET /")
