@@ -11,12 +11,13 @@ func registerRoutes (router *gin.Engine) {
     router.LoadHTMLGlob("website/tmpl/*.tmpl")
     router.GET("/", func(ctx *gin.Context) {
         logger.Info("Handling GET /")
-        ctx.HTML(http.StatusOK, "index.tmpl", gin.H{
+        data := gin.H {
             "title": "Virgil Lopez",
             "firstname": "Virgil",
             "lastname": "Lopez",
             "tagline": "Aspiring DevOps Engineer.",
-        })
+        }
+        ctx.HTML(http.StatusOK, "index.tmpl", data)
     })
 }
 
