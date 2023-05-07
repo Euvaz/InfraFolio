@@ -40,6 +40,7 @@ func initDB(db *sql.DB) {
                         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                         owner TEXT,
                         name TEXT NOT NULL,
+                        preview TEXT NOT NULL,
                         UNIQUE (owner, name)
                     );`)
     if err != nil {
