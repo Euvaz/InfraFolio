@@ -1,5 +1,6 @@
-{{ template "header.tmpl" . }}
-    <main>
+{{ template "layout.tmpl" . }}
+
+{{ define "content" }}
       <section id="hero">
         <a href="https://www.linkedin.com/in/VirgilLopez/">
             <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=38&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&repeat=false&width=435&lines=Virgil+Lopez" alt="Virgil Lopez on LinkedIN" />
@@ -47,6 +48,4 @@
           </li>
         </ul>
       </section>
-    </main>
-
-{{ template "footer.tmpl" . }}
+{{ end }}
