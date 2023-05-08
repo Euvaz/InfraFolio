@@ -6,30 +6,9 @@
       </section>
 
       <section id="github">
-        <h2>Main Projects</h2>
+        <h2>Popular GitHub Repositories</h2>
         <ul class="repository-list">
-          <li>
-            <a href="https://github.com/Euvaz/GitOps-Home">
-              <img src="https://opengraph.githubassets.com/e1c6dd074f59c19e717cea95609dbffd49eab3782d9fcccda0c1be697f931934/Euvaz/GitOps-Home" alt="GitOps-Home" />
-              <h3>GitOps-Home</h3>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/Euvaz/InfraFolio">
-              <img src="https://opengraph.githubassets.com/c7e611f10dc817825efdbbd0a261fa8562f0ccb4c986fc40d634afb8d9e564ff/Euvaz/InfraFolio" alt="InfraFolio" />
-              <h3>InfraFolio</h3>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/Euvaz/TeXCV">
-              <img src="https://opengraph.githubassets.com/931ceba3119be4710fba4e44009d2eaac4314364c21605cbd19c77e752565983/Euvaz/TeXCV" alt="TeXCV" />
-              <h3>TeXCV</h3>
-            </a>
-          </li>
-        </ul>
-        <h2>Most Popular</h2>
-        <ul class="repository-list">
-          {{ range .github_repos }}
+          {{ range slice .github_repos 0 6 }}
             <li>
               <a href="https://github.com/{{ .Owner }}/{{ .Name }}">
                 <img src="{{ .Preview }}" alt="{{ .Name }}" />
