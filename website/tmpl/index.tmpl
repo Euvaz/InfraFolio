@@ -1,8 +1,10 @@
 {{ template "header.tmpl" . }}
     <main>
       <section id="hero">
-        <h1>{{ .firstname }} {{ .lastname }}</h1>
-        <p>{{ .tagline }}</p>
+        <a href="https://www.linkedin.com/in/VirgilLopez/">
+            <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=38&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&repeat=false&width=435&lines=Virgil+Lopez" alt="Virgil Lopez on LinkedIN" />
+            <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&duration=2500&pause=1800&color=00E5FF&center=true&vCenter=true&width=435&lines=Designer+of+Cloud;Architect+of+Infrastructure;Always+Learning․․․" />
+        </a>
       </section>
 
       <section id="github">
@@ -13,6 +15,7 @@
               <a href="https://github.com/{{ .Owner }}/{{ .Name }}">
                 <img src="{{ .Preview }}" alt="{{ .Name }}" />
                 <h3>{{ .Name }}</h3>
+              </a>
             </li>
           {{ end }}
         </ul>

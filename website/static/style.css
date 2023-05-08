@@ -12,9 +12,11 @@ body {
 }
 
 header {
-  background-color: #161616;
+  background-color: #161616f2;
   color: #E5E5E5;
   padding: 20px;
+  position: sticky; top: 0;
+  backdrop-filter: blur(0.25rem);
 }
 
 .header-nav {
@@ -62,14 +64,9 @@ nav a:hover {
   color: #00E5FF;
 }
 
-#hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-#hero p {
-  font-size: 1.5rem;
-  font-style: italic;
+#hero a {
+  display: flex;
+  flex-direction: column;
 }
 
 #about {
@@ -109,18 +106,20 @@ nav a:hover {
   margin-bottom: 40px;
 }
 
-.repository-list li:hover h3 {
-  color: #00E5FF;
-}
-
 .repository-list li a {
   display: block;
+  background-color: #080808;
   text-align: center;
   text-decoration: none;
+  border-radius: 0.5rem;
 }
 
 .repository-list li a:hover {
-    background-color: #080808;
+  box-shadow: 0px 0px 40px 20px #9C84D1;
+}
+
+.repository-list li a:hover h3 {
+  color: #00E5FF;
 }
 
 .repository-list li img {
