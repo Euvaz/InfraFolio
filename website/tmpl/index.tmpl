@@ -35,15 +35,17 @@
 
       <section id="contact">
         <h2>Contact Me</h2>
-        <form class="form", action="#">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email">
-          <label for="message">Message:</label>
-          <textarea id="message" name="message"></textarea>
-          <button type="submit">Send</button>
-        </form>
+        <ul>
+          <li>
+            Email: <a href="mailto:{{ .email }}">{{ .email }}</a>
+          </li>
+          <li>
+            GitHub: <a href="https://github.com/{{ .github_user }}">{{ .github_user }}</a>
+          </li>
+          <li>
+            LinkedIn: <a href="https://linkedin.com/in/{{ .linkedin_user }}/">{{ .linkedin_user }}</a>
+          </li>
+        </ul>
       </section>
     </main>
 

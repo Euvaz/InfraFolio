@@ -14,8 +14,8 @@ func registerRoutes (router *gin.Engine, db *sql.DB) {
     router.LoadHTMLGlob("website/tmpl/*.tmpl")
     router.GET("/", func(ctx *gin.Context) {
         logger.Info("Handling GET /")
-        //GITHUB_USER := "Euvaz"
-        //LINKEDIN_USER := "VirgilLopez"
+        GITHUB_USER := "Euvaz"
+        LINKEDIN_USER := "VirgilLopez"
         type GitHubRepositories struct {
             ID                  int
             Owner               string
@@ -54,6 +54,9 @@ func registerRoutes (router *gin.Engine, db *sql.DB) {
             "lastname": "Lopez",
             "tagline": "Aspiring DevOps Engineer.",
             "github_repos": github_repos,
+            "email": "6f4baa76-cf90-4803-bc66-19838566253e@simplelogin.com",
+            "github_user": GITHUB_USER,
+            "linkedin_user": LINKEDIN_USER,
         }
         ctx.HTML(http.StatusOK, "index.tmpl", data)
     })
