@@ -29,24 +29,13 @@
         </ul>
         <h2>Most Popular</h2>
         <ul class="repository-list">
-          <li>
-            <a href="#">
-              <img src="https://via.placeholder.com/100" alt="GitHub #1 Most Starred" />
-              <h3>GitHub #1 Most Starred</h3>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://via.placeholder.com/100" alt="GitHub #2 Most Starred" />
-              <h3>GitHub #2 Most Starred</h3>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://via.placeholder.com/100" alt="GitHub #3 Most Starred" />
-              <h3>GitHub #3 Most Starred</h3>
-            </a>
-          </li>
+          {{ range .github_repos }}
+            <li>
+              <a href="https://github.com/{{ .Owner }}/{{ .Name }}">
+                <img src="{{ .Preview }}" alt="{{ .Name }}" />
+                <h3>{{ .Name }}</h3>
+            </li>
+          {{ end }}
         </ul>
       </section>
 
