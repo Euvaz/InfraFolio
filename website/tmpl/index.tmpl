@@ -2,24 +2,10 @@
 
 {{ define "content" }}
   <section id="hero">
-    <a href="https://www.linkedin.com/in/VirgilLopez/">
-      <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=38&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&repeat=false&width=435&lines=Virgil+Lopez" alt="Virgil Lopez on LinkedIN" />
+    <a href="https://www.linkedin.com/in/{{ .linkedin_user }}/">
+      <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=38&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&repeat=false&width=435&lines=Virgil+Lopez" alt="{{ .firstname }} {{ .lastname }} on LinkedIN" />
       <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&duration=2500&pause=1800&color=00E5FF&center=true&vCenter=true&width=435&lines=Designer+of+Cloud;Architect+of+Infrastructure;Always+Learning․․․" />
     </a>
-  </section>
-
-  <section id="github">
-    <h2>Popular GitHub Repositories</h2>
-    <ul class="repository-list">
-      {{ range slice .github_repos 0 6 }}
-        <li>
-          <a href="https://github.com/{{ .Owner }}/{{ .Name }}">
-            <img src="{{ .Preview }}" alt="{{ .Name }}" />
-            <h3>{{ .Name }}</h3>
-          </a>
-        </li>
-      {{ end }}
-    </ul>
   </section>
 
   <section id="experience">
@@ -29,8 +15,5 @@
   </section>
 
   <section id="certifications">
-  </section>
-
-  <section id="contributions">
   </section>
 {{ end }}

@@ -13,6 +13,7 @@ import (
 func createMyRender() multitemplate.Renderer {
   renderer := multitemplate.NewRenderer()
   renderer.AddFromFiles("index", "website/tmpl/layout.tmpl", "website/tmpl/index.tmpl")
+  renderer.AddFromFiles("projects", "website/tmpl/layout.tmpl", "website/tmpl/projects.tmpl")
   renderer.AddFromFiles("contact", "website/tmpl/layout.tmpl", "website/tmpl/contact.tmpl")
   return renderer
 }
@@ -27,6 +28,20 @@ func registerRoutes (router *gin.Engine, db *sql.DB) {
 
     router.GET("/", func(ctx *gin.Context) {
         logger.Info("Handling GET /")
+        
+        data := gin.H {
+            "title": "Virgil Lopez",
+            "tagline": "Aspiring DevOps Engineer.",
+            "firstname": "Virgil",
+            "lastname": "Lopez",
+            "linkedin_user": LINKEDIN_USER,
+        }
+        ctx.HTML(http.StatusOK, "index", data)
+    })
+
+    router.GET("/projects", func(ctx *gin.Context) {
+        logger.Info("Handling GET /projects")
+
         type GitHubRepositories struct {
             ID                  int
             Owner               string
@@ -58,15 +73,15 @@ func registerRoutes (router *gin.Engine, db *sql.DB) {
         sort.Slice(github_repos, func(i, j int) bool {
             return github_repos[i].Stargazers_count > github_repos[j].Stargazers_count
         })
-        
+
         data := gin.H {
             "title": "Virgil Lopez",
-            "tagline": "Aspiring DevOps Engineer.",
+            "tagline": "Projects",
             "firstname": "Virgil",
             "lastname": "Lopez",
             "github_repos": github_repos,
         }
-        ctx.HTML(http.StatusOK, "index", data)
+        ctx.HTML(http.StatusOK, "projects", data)
     })
 
     router.GET("/contact", func(ctx *gin.Context) {

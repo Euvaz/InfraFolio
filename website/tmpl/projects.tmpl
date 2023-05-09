@@ -1,0 +1,19 @@
+{{ template "layout.tmpl" . }}
+
+{{ define "content" }}
+  <section id="github">
+    <h2>Popular GitHub Repositories</h2>
+    <ul class="repository-list">
+      {{ range slice .github_repos 0 6 }}
+        <li>
+          <a href="https://github.com/{{ .Owner }}/{{ .Name }}">
+            <img src="{{ .Preview }}" alt="{{ .Name }}" />
+            <h3>{{ .Name }}</h3>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+  <section id="contributions">
+  </section>
+{{ end }}
