@@ -19,7 +19,6 @@ func createMyRender() multitemplate.Renderer {
 
 func registerRoutes (router *gin.Engine, db *sql.DB) {
 
-    //router.LoadHTMLGlob("website/tmpl/*.tmpl")
     router.HTMLRender = createMyRender()
 
     EMAIL := "6f4baa76-cf90-4803-bc66-19838566253e@simplelogin.com"
