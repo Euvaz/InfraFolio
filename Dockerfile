@@ -22,18 +22,23 @@ RUN go test -v ./...
 # Deploy to slim image
 FROM python:3.11.3-alpine AS build-release-stage
 
+RUN apk add --no-cache dcron
+
 WORKDIR /
 
 COPY scripts/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY scripts/*.py ./scripts/
+COPY cron/crontab.txt /etc/crontabs/root
 COPY website/ ./website
+COPY entrypoint.sh ./
 
 ENV PORT 8080
 ENV GIN_MODE release
 EXPOSE 8080
 
 COPY --from=build-stage /InfraFolio /InfraFolio
-ENTRYPOINT [ "/InfraFolio" ]
+
+ENTRYPOINT [ "/entrypoint.sh" ]
 
