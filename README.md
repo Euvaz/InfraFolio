@@ -57,7 +57,7 @@ Prereqs:
 
 #### Verify Prereqs
 
-Ensure [Go]() and [Python]() are installed:
+Ensure [Go](https://go.dev/) and [Python](https://www.python.org/) are installed:
 
 ```
 $ go version
