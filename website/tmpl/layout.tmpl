@@ -45,8 +45,10 @@
       {{ block "content" . }}
       {{ end }}
     </main>
-    <footer class="footer">
-      <p>&copy; {{ .firstname }} {{ .lastname }} 2023</p>
+    <footer>
+      <div class="footer">
+        <p>&copy; 2023 {{ .firstname }} {{ .lastname }}. All rights reserved.</p>
+      </div>
     </footer>
   </body>
 </html>
