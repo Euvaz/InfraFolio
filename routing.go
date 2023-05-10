@@ -42,7 +42,7 @@ func registerRoutes (router *gin.Engine, db *sql.DB) {
     router.GET("/projects", func(ctx *gin.Context) {
         logger.Info("Handling GET /projects")
 
-        type GitHubRepositories struct {
+        type GitHubRepository struct {
             ID                  int
             Owner               string
             Name                string
@@ -56,9 +56,9 @@ func registerRoutes (router *gin.Engine, db *sql.DB) {
         }
         defer rows.Close()
 
-        github_repos := []GitHubRepositories{}
+        github_repos := []GitHubRepository{}
         for rows.Next() {
-            var repo GitHubRepositories
+            var repo GitHubRepository
             err = rows.Scan(&repo.ID, &repo.Owner, &repo.Name, &repo.Preview, &repo.Stargazers_count)
             if err != nil {
                 logger.Fatal(err.Error())
