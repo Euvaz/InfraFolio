@@ -2,17 +2,21 @@
 
 {{ define "content" }}
   <section id="contact">
-    <h2>Contact Me</h2>
-    <ul>
-      <li>
-        Email: <a href="mailto:{{ .email }}">{{ .email }}</a>
-      </li>
-      <li>
-        GitHub: <a href="https://github.com/{{ .github_user }}">{{ .github_user }}</a>
-      </li>
-      <li>
-        LinkedIn: <a href="https://linkedin.com/in/{{ .linkedin_user }}/">{{ .linkedin_user }}</a>
-      </li>
-    </ul>
+    <div class="container">
+      <h2 class="section-heading">Get In Touch</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <ul class="list-unstyled">
+            <li><i class="fa fa-envelope"></i> Email: <a href="mailto:{{ .email }}">{{ .email }}</a></li>
+            <li><i class="fab fa-github"></i> GitHub: <a href="https://github.com/{{ .github_user }}">{{ .github_user }}</a></li>
+            <li><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/{{ .linkedin_user }}/">{{ .linkedin_user }}</a></li>
+          </ul>
+        </div>
+        <div class="col-md-8">
+          <p>If you have any inquiries, feedback or collaboration opportunities, I would be delighted to hear from you.</p>
+          <p>Please feel free to contact me through any of the channels provided.</p>
+        </div>
+      </div>
+    </div>
   </section>
 {{ end }}

@@ -179,32 +179,53 @@ nav a:hover {
 }
 
 #contact {
-  padding: 50px;
-  background-color: #080808;
-  border-top: 0.25rem solid;
-  color: #E5E5E5;
+  padding-top: 2rem;
 }
 
 #contact h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  color: #333;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
 }
-
 
 #contact ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 #contact li {
   margin-bottom: 10px;
-  font-size: 16px;
 }
 
 #contact li:last-child {
-  margin-bottom: 0;
+  margin-bottom: 2rem;
 }
+
+#contact a {
+  color: #333;
+}
+
+#contact a:hover {
+  text-decoration: none;
+  color: #00E5FF;
+}
+
+#contact i {
+  margin-right: 10px;
+  color: #0088cc;
+}
+
+@media (min-width: 768px) {
+  .col-md-4 {
+    width: 33.3333%;
+    float: left;
+    padding-left: 2rem;
+  }
+
+  .col-md-8 {
+    width: 66.6667%;
+    float: left;
+    padding-right: 30rem;
+  }
 
 footer {
   margin-top: auto;
