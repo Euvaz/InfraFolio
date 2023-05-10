@@ -1,6 +1,12 @@
 # InfraFolio
 
-TODO
+This portfolio website project is a Go-based implementation utilizing the [gin](https://github.com/gin-gonic/gin) library as the web framework, with built-in HTML templating support via the [multitemplate](https://github.com/gin-contrib/multitemplate) library for efficient and reliable website rendering.
+
+To maintain the website's currency, the project incorporates a Python script, which interfaces with GitHub's API to retrieve updated data on the my project repositories. This data is stored in an SQLite database and automatically propagated to the website's pages.
+
+This project is optimized for deployment as a microservice using a Docker images via the provided [Dockerfile](https://github.com/Euvaz/InfraFolio/blob/main/Dockerfile). The images are subjected to robust linting, testing, and building processes through GitHub Actions, ensuring the highest quality and reliability.
+
+With its technical implementation and advanced functionalities, this project offers an effective way to exhibit my web development skills and showcase my professional experience, while ensuring visitors are always up-to-date on the my latest endeavors.
 
 ## Overview
 
