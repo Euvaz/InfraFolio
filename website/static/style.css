@@ -5,6 +5,9 @@
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: Arial, sans-serif;
   line-height: 1.5;
   background-color: #080808;
@@ -204,6 +207,7 @@ nav a:hover {
 }
 
 footer {
+  margin-top: auto;
   background-color: #161616;
 }
 
