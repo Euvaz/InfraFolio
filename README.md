@@ -12,7 +12,7 @@ With its technical implementation and advanced functionalities, this project off
 
 - [Repository structure](https://github.com/euvaz/infrafolio#-repository-structure)
 - [Usage](https://github.com/euvaz/infrafolio#usage)
-  - [Docker](https://github.com/euvaz/infrafolio#docker-(recommended))
+  - [Docker](https://github.com/euvaz/infrafolio#docker-recommended)
     - [Build](https://github.com/euvaz/infrafolio#build)
     - [Run](https://github.com/euvaz/infrafolio#run)
   - [Manual](https://github.com/euvaz/infrafolio#manual)
