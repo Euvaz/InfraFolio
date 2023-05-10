@@ -12,7 +12,7 @@ import (
 
 func createMyRender() multitemplate.Renderer {
   renderer := multitemplate.NewRenderer()
-  renderer.AddFromFiles("index", "website/tmpl/layout.tmpl", "website/tmpl/index.tmpl")
+  renderer.AddFromFiles("home", "website/tmpl/layout.tmpl", "website/tmpl/home.tmpl")
   renderer.AddFromFiles("projects", "website/tmpl/layout.tmpl", "website/tmpl/projects.tmpl")
   renderer.AddFromFiles("contact", "website/tmpl/layout.tmpl", "website/tmpl/contact.tmpl")
   return renderer
@@ -36,7 +36,7 @@ func registerRoutes (router *gin.Engine, db *sql.DB) {
             "lastname": "Lopez",
             "linkedin_user": LINKEDIN_USER,
         }
-        ctx.HTML(http.StatusOK, "index", data)
+        ctx.HTML(http.StatusOK, "home", data)
     })
 
     router.GET("/projects", func(ctx *gin.Context) {
