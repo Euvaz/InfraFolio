@@ -181,19 +181,23 @@ nav a:hover {
   #github {
     padding: 1em;
   }
+
   .repository-list {
+    flex-direction: column;
     display: block;
   }
+
   .repository-list li {
     width: 100%;
     margin-bottom: 20px;
     display: flex;
   }
+
   .repository-list li img {
     float: left;
-    max-width: 50%;
     margin-right: 20px;
   }
+
   .repository-list li h3 {
     margin-top: 1rem;
   }
