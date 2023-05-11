@@ -167,7 +167,7 @@ nav a:hover {
 }
 
 .repository-list li img {
-  width: 100%;
+  max-width: 100%;
   margin-bottom: 10px;
 }
 
@@ -175,6 +175,25 @@ nav a:hover {
   font-size: 1.1rem;
   font-weight: bold;
   color: #E5E5E5;
+}
+
+@media screen and (max-width: 768px) {
+  .repository-list {
+    display: block;
+  }
+  .repository-list li {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+  }
+  .repository-list li img {
+    float: left;
+    max-width: 50%;
+    margin-right: 20px;
+  }
+  .repository-list li h3 {
+    margin-top: 1rem;
+  }
 }
 
 #contact {
@@ -232,3 +251,14 @@ footer {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  footer {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    font-size: 12px;
+  }
+}
