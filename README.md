@@ -83,7 +83,7 @@ $ pip install -r scripts/requirements.txt
 Python:
 
 ```
-$ go mod downlod
+$ go mod download
 ```
 
 #### Compile Binary
