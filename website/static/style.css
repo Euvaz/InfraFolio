@@ -118,6 +118,7 @@ nav a:hover {
 #hero a {
   display: flex;
   flex-direction: column;
+  max-width: 100%;
 }
 
 #about {
