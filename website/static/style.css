@@ -128,7 +128,7 @@ nav a:hover {
 }
 
 #github {
-  padding: 50px;
+  padding: 5em;
 }
 
 #github h2 {
@@ -178,6 +178,9 @@ nav a:hover {
 }
 
 @media screen and (max-width: 768px) {
+  #github {
+    padding: 1em;
+  }
   .repository-list {
     display: block;
   }
@@ -234,16 +237,24 @@ nav a:hover {
 
 @media (min-width: 768px) {
   .col-md-4 {
-    width: 33.3333%;
+    width: 40%;
     float: left;
     padding-left: 2rem;
   }
 
   .col-md-8 {
-    width: 66.6667%;
+    width: 60%;
     float: left;
-    padding-right: 30rem;
+    padding-right: 3rem;
   }
+}
+
+@media (max-width: 768px) {
+  .row {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
 
 footer {
   margin-top: auto;
@@ -253,7 +264,7 @@ footer {
 
 @media (max-width: 768px) {
   footer {
-      font-size: 14px;
+    font-size: 14px;
   }
 }
 
