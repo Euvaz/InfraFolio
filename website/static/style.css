@@ -241,22 +241,22 @@ nav a:hover {
 
 @media (min-width: 768px) {
   .col-md-4 {
-    width: 40%;
     float: left;
-    padding-left: 2rem;
+    padding-left: 2em;
   }
 
   .col-md-8 {
-    width: 60%;
     float: left;
-    padding-right: 3rem;
+    padding-left: 2em;
   }
 }
 
 @media (max-width: 768px) {
   .row {
-    padding-right: 2rem;
-    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding-right: 2em;
+    padding-left: 2em;
   }
 }
 
