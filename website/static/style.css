@@ -102,7 +102,11 @@ nav a:hover {
 
 @media (max-width: 768px) {
   .dropdown-content a {
-      display: none;
+    display: none;
+  }
+  
+  .dropdown-content a:hover {
+    display: none;
   }
 }
 
