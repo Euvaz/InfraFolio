@@ -110,6 +110,10 @@ nav a:hover {
   }
 }
 
+:target {
+  scroll-margin-top: 3em;
+}
+
 #hero {
   height: 500px;
   display: flex;
