@@ -129,6 +129,15 @@ nav a:hover {
   max-width: 100%;
 }
 
+.section {
+  padding: 2.5em;
+}
+
+.section-header {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
 #about {
   padding: 50px;
 }
@@ -142,13 +151,25 @@ nav a:hover {
   font-size: 1.1rem;
 }
 
-#github {
-  padding: 2.5em;
+.experience-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
 }
 
-#github h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+.experience-list li {
+  width: calc(50% - 20px);
+  margin-bottom: 40px;
+}
+
+.experience-list li a {
+  display: block;
+}
+
+.experience-list li img {
+  max-width: 100%;
+  margin-bottom: 10px;
 }
 
 .repository-list {
@@ -156,8 +177,6 @@ nav a:hover {
   flex-wrap: wrap;
   justify-content: space-between;
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .repository-list li {
@@ -224,8 +243,6 @@ nav a:hover {
 
 #contact h2 {
   color: #E5E5E5;
-  padding-left: 1rem;
-  padding-bottom: 1rem;
 }
 
 #contact ul {
@@ -257,7 +274,7 @@ nav a:hover {
 @media (min-width: 768px) {
   .col-md-4 {
     float: left;
-    padding-left: 2em;
+    padding-left: 1em;
   }
 
   .col-md-8 {

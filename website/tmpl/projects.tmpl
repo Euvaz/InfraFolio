@@ -1,8 +1,8 @@
 {{ template "layout.tmpl" . }}
 
 {{ define "content" }}
-  <section id="github">
-    <h2>Popular GitHub Repositories</h2>
+  <section id="github" class="section">
+    <h2 class="section-header">Popular GitHub Repositories</h2>
     <ul class="repository-list">
       {{ range slice .github_repos 0 6 }}
         <li>
