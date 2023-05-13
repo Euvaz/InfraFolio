@@ -168,22 +168,28 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
-.skills-list {}
-
-.certifications-list {
+.skills-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   list-style: none;
 }
 
+.certifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  gap: 1em;
+}
+
 .certifications-list li {
-  width: calc(25% - 20px);
   margin-bottom: 40px;
   background-color: #080808;
   border-color: #161616;
   border-style: solid;
-  border-radius: 0.5rem;
+  border-radius: 0.5em;
+  padding-inline: 0.5em;
 }
 
 .certifications-list li:hover {
@@ -200,6 +206,13 @@ nav a:hover {
 
 .certifications-list li p {
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .certifications-list li {
+    flex: 2 1 auto;
+    margin-bottom: 20px;
+  }
 }
 
 .repository-list {
@@ -301,8 +314,8 @@ nav a:hover {
   .row {
     display: flex;
     flex-direction: column;
-    padding-right: 2em;
-    padding-left: 2em;
+    padding-right: 1em;
+    padding-left: 1em;
   }
 }
 
