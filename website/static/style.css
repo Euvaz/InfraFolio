@@ -190,6 +190,8 @@ nav a:hover {
   border-style: solid;
   border-radius: 0.5em;
   padding-inline: 0.5em;
+  flex: 2 1 auto;
+  margin-bottom: 20px;
 }
 
 .certifications-list li:hover {
@@ -206,13 +208,6 @@ nav a:hover {
 
 .certifications-list li p {
   text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-  .certifications-list li {
-    flex: 2 1 auto;
-    margin-bottom: 20px;
-  }
 }
 
 .repository-list {
