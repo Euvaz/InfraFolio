@@ -1,0 +1,92 @@
+* InfraFolio
+
+This portfolio website project is a Go-based implementation utilizing the [[https://github.com/gin-gonic/gin][gin]] library as the web framework, with built-in HTML templating support via the [[https://github.com/gin-contrib/multitemplate][multitemplate]] library for efficient and reliable website rendering.
+
+To maintain the website's currency, the project incorporates a [[https://github.com/Euvaz/InfraFolio/blob/main/scripts/scrape.py][Python script]], which interfaces with GitHub's API to retrieve updated data on my project repositories and is executed automatically through a Cron Job via the provided [[https://github.com/Euvaz/InfraFolio/blob/main/cron/crontab.txt][crontab]] file. This data is stored in an SQLite database and automatically propagated to the website's pages.
+
+This project is optimized for deployment as a microservice using a Docker images via the provided [[https://github.com/Euvaz/InfraFolio/blob/main/Dockerfile][Dockerfile]]. The images are subjected to robust linting, testing, and building processes through GitHub Actions, ensuring the highest quality and reliability.
+
+With its technical implementation and advanced functionalities, this project offers an effective way to exhibit my web development skills and showcase my professional experience, while ensuring visitors are always up-to-date on the my latest endeavors.
+
+** Overview
+
+- [[https://github.com/euvaz/infrafolio#-repository-structure][Repository structure]]
+- [[https://github.com/euvaz/infrafolio#usage][Usage]]
+  - [[https://github.com/euvaz/infrafolio#docker-recommended][Docker (Recommended)]]
+    - [[https://github.com/euvaz/infrafolio#build][Build]]
+    - [[https://github.com/euvaz/infrafolio#run][Run]]
+  - [[https://github.com/euvaz/infrafolio#manual][Manual]]
+    - [[https://github.com/euvaz/infrafolio#verify-prereq][Verify Prereqs]]
+    - [[https://github.com/euvaz/infrafolio#download-dependencies][Download Dependencies]]
+    - [[https://github.com/euvaz/infrafolio#compile-binary][Compile Binary]]
+
+** 📂 Repository structure
+
+#+BEGIN_SRC
+cron        # Crontab files
+scripts     # Python helper scripts
+website/    # Website files
+├── static  # Static website resources
+└── tmpl    # HTML templates
+#+END_SRC
+
+** Usage
+
+*** Docker (Recommended)
+
+A [[https://github.com/Euvaz/InfraFolio/blob/main/Dockerfile][Dockerfile]] is provided and kept regularly updated for convenient deployment.
+
+**** Build
+
+Firstly, the Docker image will need to be built:
+
+#+BEGIN_SRC shell
+$ docker build -t infrafolio .
+#+END_SRC
+
+**** Run
+
+Afterwards, the Docker image can be ran:
+
+#+BEGIN_SRC shell
+$ doker run -itdp 8080:8080 infrafolio:latest
+#+END_SRC
+
+*** Manual
+
+The service can be ran manually after downloading dependencies and compiling the binary. Note that this will require a Systemd/OpenRC unit file be configured manually, as this is intended to be ran as a microservice.
+
+Prereqs:
+  - Go 1.19+
+  - Python3
+
+**** Verify Prereqs
+
+Ensure [[https://go.dev/][Go]] and [[https://www.python.org/][Python]] are installed:
+
+#+BEGIN_SRC shell
+$ go version
+go version go1.19.8 linux/amd64
+$ python --version
+Python 3.10.11
+#+END_SRC
+
+**** Download Dependencies
+
+Go:
+
+#+BEGIN_SRC shell
+$ pip install -r scripts/requirements.txt
+#+END_SRC
+
+Python:
+
+#+BEGIN_SRC shell
+$ go mod download
+#+END_SRC
+
+**** Compile Binary
+
+#+BEGIN_SRC shell
+$ go build
+#+END_SRC
